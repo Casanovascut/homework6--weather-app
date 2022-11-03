@@ -1,0 +1,7 @@
+header{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(25, 25, 225, 0.779);
+    padding: 50px;
+}
