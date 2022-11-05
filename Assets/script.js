@@ -1,5 +1,5 @@
 var wthrApiKey = '928a790dea4c4ffa1546ae2e3cf64aef'
-var cardContainerEl = document.getElementById('cardcontainer')
+var cardContainerEl = document.getElementById('cardContainer')
 // make button show weather results for specific cities
 $('#btn').on('click',()=>{
     let cityFinder = $('#inputBox').val()
