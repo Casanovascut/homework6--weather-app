@@ -5,3 +5,8 @@ header{
     background-color: rgba(25, 25, 225, 0.779);
     padding: 50px;
 }
+.card{
+    display: flex;
+    justify-content:last baseline;
+    align-items: center;
+}
