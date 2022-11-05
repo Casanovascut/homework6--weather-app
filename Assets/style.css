@@ -5,8 +5,16 @@ header{
     background-color: rgba(25, 25, 225, 0.779);
     padding: 50px;
 }
-.card{
+.cardcontainer{
     display: flex;
-    justify-content:last baseline;
-    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    margin: 10px;
+}
+
+.searchbarcontainer{
+    margin: 15px;
+    padding-left: 30%;
 }
