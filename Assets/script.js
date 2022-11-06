@@ -7,7 +7,8 @@ $('#btn').on('click',()=>{
     (data){
         console.log("data received:", data) 
        // return 5 day weather data
-        for(var i = 0;i<5;i++){
+        for(var i = 0;i<data.length;i++){
+            if(data[0]){
         //create card containers and put them in the card container element
             var wthrCardEl = document.createElement('div')
             wthrCardEl.classList.add('card')
@@ -29,7 +30,7 @@ $('#btn').on('click',()=>{
             crdtitle.textContent = data.list[i].dt_txt
             crdtxt.textContent = data.list[i].main.temp
 
-    }})
+    }}})
     
 })
 
