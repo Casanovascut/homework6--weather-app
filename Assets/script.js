@@ -15,10 +15,20 @@ $('#btn').on('click',()=>{
             cardBdy.classList.add('card-body')
             var crdtxt = document.createElement('p')
             crdtxt.classList.add('card-text')
+            var crdtitle = document.createElement('h5')
+            crdtitle.classList.add('card-title')
+            var crdImg = document.createElement('img')
+            var iconCde= data.list[i].weather[0].icon
+            crdImg.src = "http://openweathermap.org/img/w/" + iconCde + ".png"
+            crdImg.classList.add('card-img-top')
             cardContainerEl.appendChild(wthrCardEl)
+            wthrCardEl.appendChild(crdImg)
             wthrCardEl.appendChild(cardBdy)
+            cardBdy.appendChild(crdtitle)
             cardBdy.appendChild(crdtxt)
+            crdtitle.textContent = data.list[i].dt_txt
             crdtxt.textContent = data.list[i].main.temp
+
     }})
     
 })
