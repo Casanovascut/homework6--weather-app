@@ -20,20 +20,35 @@ $('#btn').on('click',()=>{
             cardBdy.classList.add('card-body')
             var crdtxt = document.createElement('p')
             crdtxt.classList.add('card-text')
-            var crdtitle = document.createElement('h5')
+            var crdtitle = document.createElement('p')
             crdtitle.classList.add('card-title')
             var crdImg = document.createElement('img')
             var iconCde= data.list[i].weather[0].icon
             crdImg.src = "http://openweathermap.org/img/w/" + iconCde + ".png"
             crdImg.classList.add('card-img-top')
+            var cityName = document.createElement('h1')
+            cityName.classList.add('card-text')
+            var windSpeed = document.createElement('p')
+            windSpeed.classList.add('card-text')
+            var humidity = document.createElement('p')
+            humidity.classList.add('card-text')
             cardContainerEl.appendChild(wthrCardEl)
             wthrCardEl.appendChild(crdImg)
+            cardBdy.appendChild(cityName)
             wthrCardEl.appendChild(cardBdy)
             cardBdy.appendChild(crdtitle)
             cardBdy.appendChild(crdtxt)
-            crdtitle.textContent = data.list[i].dt_txt
+            cardBdy.appendChild(windSpeed)
+            cardBdy.appendChild(humidity)
+            cityName.textContent = data.city.name
+            var dtetxt = data.list[i].dt_txt
+            crdtitle.textContent = "Date: "+ dtetxt.split(" ")[0]
             var kelvin = data.list[i].main.temp
-            crdtxt.textContent = 'temp: '+Math.floor(((kelvin-273.15)*1.8)+32)+"F"
+            crdtxt.textContent = 'Temp: '+Math.floor(((kelvin-273.15)*1.8)+32)+"F"
+            var winSpeedData = data.list[i].wind.speed
+            windSpeed.textContent = 'Wind-speed: '+ winSpeedData
+            var humidityData = data.list[i].main.humidity
+            humidity.textContent = "Humidity: " + humidityData
 
     }})
     
